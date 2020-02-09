@@ -16,28 +16,29 @@ export default class Engine {
     /**
      * Основной цикл
      */
-    async mainWheel() {
-        await this.logic();
-        await this.render();
-        this.restart();
-    }
+    mainWheel = () => {
+
+        this.collisionEventer();
+        this.logic();
+        this.render();
+        this.restart()
+
+    };
 
     /**
      * Запуск логики поведения объектов
      */
-    async logic () {
+    logic = () => {
         if (this.models.length > 0) {
             for (let model of this.models)
                 model.update();
         }
-
-        this.collisionEventer()
     }
 
     /**
      * Отображение
      */
-    async render () {
+    render = () => {
         this.ctx.clearRect(0,0,1920,1080);
         this.ctx.drawImage(this.bg, 0,0,1920,1080);
 
@@ -48,20 +49,18 @@ export default class Engine {
     /**
      * Запуск цикла заново
      */
-    restart () {
-        console.log(this.tick);
-       if (this.pause === false) {
-           this.tick++;
-           if (this.tick % 48 === 0) this.seconds++;
-
-           setTimeout(this.mainWheel() , 1000)
-       }
-    }
+    restart =() => {
+        if (this.pause === false) {
+            this.tick += 1;
+            console.log(this.tick);
+            setTimeout(this.mainWheel, 1000/10)
+        }
+    };
 
     /**
      * Отслеживание соприкосновений
      */
-    collisionEventer ( ) {
+    collisionEventer = () => {
         if (this.models.length <= 0) return;
 
         for(let model of this.models)
@@ -81,26 +80,26 @@ export default class Engine {
     /**
      * Добавить модель
      */
-    setModel(model) {
+    setModel = (model) => {
         this.models.push(model)
     }
 
     /**
      * Начать
      */
-    START ()  {
+    START = () => {
         this.mainWheel()
     }
 
     /**
      * Начать заново
      */
-    RESTART ()  {
+    RESTART =()  => {
         this.constructor();
         this.mainWheel()
     }
 
-    CanvasINIT(canvas) {
+    CanvasINIT=(canvas) => {
         canvas.height = window.innerHeight;
         canvas.width = window.innerWidth;
         this.ctx = canvas.getContext('2d');
@@ -109,7 +108,7 @@ export default class Engine {
     /**
      * Отладка
      */
-    DUMP () {
+    DUMP =()  =>{
         console.log(this)
     }
 
