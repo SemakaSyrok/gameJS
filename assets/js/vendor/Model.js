@@ -12,17 +12,21 @@ export default class Model{
     get rPos () { return this.lPos + this.width}
     get bPos () { return this.tPos + this.height}
 
-    update() {
+    update = () => {
 
-    }
+    };
 
-    render() {
+    render = () => {
 
-    }
+    };
 
-    onCollision (model) {
+    onCollision =  model => {
 
-    }
+    };
+
+    init = () => {
+
+    };
 
 
 }

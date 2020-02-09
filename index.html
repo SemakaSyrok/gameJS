@@ -10,17 +10,42 @@
 
 
 
-<div class="ui-panel pos-a" style="top: 30px;left: 30px;">
-    qwe
+<div class="pos-aa" id="panel" style="display: none">
+    <div class="ui-panel pos-a" style="top: 30px;left: 30px;">
+        HP: <span id="hp"></span> <br>
+        MP: <span id="mp"></span>
+    </div>
+    <div class="ui-panel pos-a" style="top: 30px;right: 30px;">
+        Score: <span id="score"></span>
+    </div>
+    <div class="ui-panel pos-a" style="bottom: 30px;left: 30px;">
+        Time: <span id="time"></span>
+    </div>
+    <div class="ui-panel pos-a" style="bottom: 30px;right: 30px;">
+        Name: <span id="name"></span>
+    </div>
 </div>
-<div class="ui-panel pos-a" style="top: 30px;right: 30px;">
-    zxc
-</div>
-<div class="ui-panel pos-a" style="bottom: 30px;left: 30px;">
-    zzz
-</div>
-<div class="ui-panel pos-a" style="bottom: 30px;right: 30px;">
-    dfgdfgd
+
+<div class="pos-aa" style=" display: flex; justify-content: center; align-items: center ">
+
+    <div class="po" id="startMenu" style="position: relative ;width: 60%;height: 60%; border: 1px solid silver; padding: 12px;background: white;">
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, vel!</p>
+
+        <input type="text" placeholder="Введите имя" id="nameInput">
+
+        <button style="position: absolute; bottom: 20px;" id="startGame">Начать игру</button>
+    </div>
+    
+    <div id="video"
+         style="display: none ;position: relative ;width: 60%;height: 60%; border: 1px solid silver; padding: 12px;background: white;">
+
+        <img src="/assets/giphy.gif" alt="">
+
+        <button style="position: absolute; bottom: 20px;" id="startGameStart">Начать игру</button>
+        
+    </div>
+
 </div>
 
 <div id="main">

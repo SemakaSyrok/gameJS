@@ -1,3 +1,5 @@
+import Loader from "./Loader.js";
+import Hero from "../models/Hero.js"
 
 export default class Engine {
 
@@ -8,8 +10,8 @@ export default class Engine {
         this.pause = false;
         this.canvas = canvas;
         this.ctx;
-        this.bg = new Image(1920, 1080);
-        this.bg.src = '/assets/img/fon.jpg';
+        this.offset = 0;
+
         this.CanvasINIT(this.canvas);
     }
 
@@ -40,11 +42,11 @@ export default class Engine {
      */
     render = () => {
         this.ctx.clearRect(0,0,1920,1080);
-        this.ctx.drawImage(this.bg, 0,0,1920,1080);
+        this.ctx.drawImage(Loader.images.bg, this.offset,0, window.innerWidth, 1180, 0, 0, 3000, window.innerHeight);
 
         for (let model of this.models)
             model.render();
-    }
+    };
 
     /**
      * Запуск цикла заново
@@ -52,7 +54,6 @@ export default class Engine {
     restart =() => {
         if (this.pause === false) {
             this.tick += 1;
-            console.log(this.tick);
             setTimeout(this.mainWheel, 1000/10)
         }
     };
@@ -81,15 +82,17 @@ export default class Engine {
      * Добавить модель
      */
     setModel = (model) => {
+        model.init();
         this.models.push(model)
-    }
+    };
 
     /**
      * Начать
      */
     START = () => {
+        this.setModel(new Hero());
         this.mainWheel()
-    }
+    };
 
     /**
      * Начать заново
@@ -97,20 +100,20 @@ export default class Engine {
     RESTART =()  => {
         this.constructor();
         this.mainWheel()
-    }
+    };
 
     CanvasINIT=(canvas) => {
         canvas.height = window.innerHeight;
         canvas.width = window.innerWidth;
         this.ctx = canvas.getContext('2d');
-    }
+    };
 
     /**
      * Отладка
      */
     DUMP =()  =>{
         console.log(this)
-    }
+    };
 
 
 }

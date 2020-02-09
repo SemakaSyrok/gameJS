@@ -1,33 +1,26 @@
-* {
-    margin: 0;
+*{
     padding: 0;
+    margin: 0;
     box-sizing: border-box;
-}
-
-body {
-    font-size: 1.3em;
-}
-
-#main {
-
-}
-
-.panel {
-    z-index: 10;
-    position: relative;
-    height: 100vh;
-    width: 100%;
+    max-width: 99.7%;
+    max-height: 99.5%;
 }
 
 .pos-a {
     position: absolute;
 }
-
+.pos-aa {
+    width: 100%;
+    height: 99vh;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
 .ui-panel {
     text-align: center;
     width: 140px;
     height: 42px;
-    opacity: .7;
-    background: #e2e3ea;
-    box-shadow: 0 0 2px 2px rgba(0,0,0,0.15);
+    opacity: 0.7;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 2px 2px;
+    background: rgb(226, 227, 234);
 }
