@@ -12,17 +12,16 @@
 
 <div class="pos-aa" id="panel" style="display: none">
     <div class="ui-panel pos-a" style="top: 30px;left: 30px;">
-        HP: <span id="hp"></span> <br>
-        MP: <span id="mp"></span>
+        HP: <span id="hp">100</span>
     </div>
     <div class="ui-panel pos-a" style="top: 30px;right: 30px;">
-        Score: <span id="score"></span>
+        Score: <span id="score">0</span>
     </div>
     <div class="ui-panel pos-a" style="bottom: 30px;left: 30px;">
-        Time: <span id="time">a</span>
+        Time: <span id="time">0</span>
     </div>
     <div class="ui-panel pos-a" style="bottom: 30px;right: 30px;">
-        Name: <span id="name"></span>
+        Name: <span id="name">A</span>
     </div>
 </div>
 
@@ -45,6 +44,17 @@
         <button style="position: absolute; bottom: 20px;" id="startGameStart">Начать игру</button>
         
     </div>
+
+
+    <div class="po" id="endGame" style="display: none;position: relative ;width: 60%;height: 60%; border: 1px solid silver; padding: 12px;background: white;">
+
+        <p>Игра окончена</p>
+
+
+
+        <button style="position: absolute; bottom: 20px;" id="restart" onclick="ENGINE.RESTART()">Заново</button>
+    </div>
+
 
 </div>
 

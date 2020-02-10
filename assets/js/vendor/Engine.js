@@ -17,6 +17,7 @@ export default class Engine {
 
         this.CanvasINIT(this.canvas);
 
+        document.removeEventListener('keydown', () => {});
         document.addEventListener('keydown', e => {
             if(e.keyCode === 27) ENGINE.PAUSE();
         })
@@ -86,6 +87,31 @@ export default class Engine {
         if (this.pause === false) {
             setTimeout(this.mainWheel, 1000/20)
         }
+    };
+
+    ENDGAME = _ => {
+        ENGINE.pause = true;
+        let data = {
+            time: Math.round(ENGINE.tick / 24),
+            score: document.getElementById('score').innerHTML || 0,
+            name: document.getElementById('name').innerHTML,
+        };
+
+        fetch('/server/index.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        }).then(r => {
+            r.json()
+        }).then(r => {
+            console.log(r)
+        }).catch(e => {
+            console.log(e)
+        }).finally(() => {
+            document.getElementById('endGame').style.display = 'block';
+        })
     };
 
     /**
@@ -170,8 +196,17 @@ export default class Engine {
      * Начать заново
      */
     RESTART =()  => {
-        this.constructor();
-        this.mainWheel()
+        this.models = [];
+        this.tick = 0;
+        this.seconds = 0;
+        this.pause = false;
+        this.canvas = canvas;
+        this.ctx;
+        this.offset = 0;
+
+        this.CanvasINIT(this.canvas);
+        this.START();
+        document.getElementById('endGame').style.display = 'none';
     };
 
     CanvasINIT=(canvas) => {

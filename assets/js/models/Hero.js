@@ -67,6 +67,9 @@ export default class Hero extends Model{
         if (this.tPos >= 700 && this.position === 'fly') this.position = '';
         if (ENGINE.tick % 24 === 0) this.state.hp -= 1;
         document.querySelector('#hp').innerHTML = this.state.hp;
+        if (this.state.hp <= 0) {
+            ENGINE.ENDGAME();
+        }
     };
 
     onCollision = model => {
@@ -76,6 +79,9 @@ export default class Hero extends Model{
         if(model.tag === 'CREATURE') {
             this.state.hp += 5;
             if (this.state.hp > 100) this.state.hp = 100;
+            let score = document.querySelector('#score').innerHTML;
+            score++;
+            document.querySelector('#score').innerHTML = score;
             ENGINE.unSetModel(model);
         }
     };
