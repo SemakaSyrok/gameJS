@@ -2,6 +2,7 @@ import Loader from "./Loader.js";
 import Hero from "../models/Hero.js";
 import Rock from "../models/Rock.js";
 import Creature from "../models/Creature.js";
+import Hiena from "../models/Hiena.js";
 
 export default class Engine {
 
@@ -15,6 +16,10 @@ export default class Engine {
         this.offset = 0;
 
         this.CanvasINIT(this.canvas);
+
+        document.addEventListener('keydown', e => {
+            if(e.keyCode === 27) ENGINE.PAUSE();
+        })
     }
 
     /**
@@ -138,7 +143,27 @@ export default class Engine {
             this.setModel(new Rock(i))
         }
 
+        for(let i = 300, j = 1; j <= 5; i += 500, j++)
+        {
+            setTimeout( function() {
+                ENGINE.setHiena(i)
+            },j*1000 , i);
+        }
 
+
+    };
+
+    PAUSE = _ => {
+        if(this.pause === false)
+            this.pause = !this.pause;
+        else {
+            this.pause = !this.pause;
+            this.mainWheel();
+        }
+    };
+
+    setHiena = i => {
+        ENGINE.setModel(new Hiena(i));
     };
 
     /**
