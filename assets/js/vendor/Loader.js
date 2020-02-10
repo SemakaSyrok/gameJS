@@ -4,7 +4,6 @@ export default class Loader {
 
     static images = {};
 
-    static audio;
 
     static INIT = () => {
         this.images.gus = new Image(30,20);
@@ -18,7 +17,7 @@ export default class Loader {
         this.images.hiena = new Image(50,60);
         this.images.hiena.src = '/assets/Гиена/10.png';
 
-        // this.audio.au = new Audio('http://wsr-0/assets/Music/41461198_326895439.mp3');
+        this.audio = new Audio('/assets/Music/41461198_326895439.mp3');
     }
 
 }

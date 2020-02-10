@@ -156,6 +156,7 @@ export default class Engine {
     START = () => {
         this.setModel(new Hero());
         this.createRocks();
+        Loader.audio.play();
         this.mainWheel()
     };
 
@@ -224,3 +225,7 @@ export default class Engine {
 
 
 }
+
+
+
+//МУЗЫЫЫЫЫКУУУУУ!!!!!!!!!!!!музон
