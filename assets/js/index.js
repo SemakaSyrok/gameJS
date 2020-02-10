@@ -12,4 +12,6 @@ UserController.INIT();
 window.ENGINE = new Engine(canvas);
 
 
-setTimeout(ENGINE.render(), 2000);
+setTimeout("ENGINE.render()", 1000);
+setTimeout("ENGINE.DUMP()", 3000);
+setTimeout("ENGINE.DUMP()", 6000);

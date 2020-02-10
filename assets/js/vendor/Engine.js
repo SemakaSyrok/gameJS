@@ -1,5 +1,6 @@
 import Loader from "./Loader.js";
-import Hero from "../models/Hero.js"
+import Hero from "../models/Hero.js";
+import Rock from "../models/Rock.js";
 
 export default class Engine {
 
@@ -20,29 +21,39 @@ export default class Engine {
      */
     mainWheel = () => {
 
+        this.timer();
         this.collisionEventer();
         this.logic();
         this.render();
-        this.restart()
+        this.restart();
 
+    };
+
+    timer = () => {
+        this.tick++;
+        if(this.tick % 24 ===0)
+            this.seconds++;
+
+        document.querySelector('#time').innerHTML = `${Math.floor(this.seconds / 60)}:${this.seconds % 60}`;
     };
 
     /**
      * Запуск логики поведения объектов
      */
-    logic = () => {
-        if (this.models.length > 0) {
-            for (let model of this.models)
-                model.update();
-        }
-    }
+    logic = () => (this.models.length > 0) ? this.models.forEach((m,i,arr) => m.update()) : null;
 
     /**
      * Отображение
      */
     render = () => {
         this.ctx.clearRect(0,0,1920,1080);
-        this.ctx.drawImage(Loader.images.bg, this.offset,0, window.innerWidth, 1180, 0, 0, 3000, window.innerHeight);
+        this.ctx.drawImage(
+            Loader.images.bg,
+            this.offset, 0,
+            window.innerWidth, 1180,
+            0,0,
+            3000, window.innerHeight
+        );
 
         for (let model of this.models)
             model.render();
@@ -53,8 +64,7 @@ export default class Engine {
      */
     restart =() => {
         if (this.pause === false) {
-            this.tick += 1;
-            setTimeout(this.mainWheel, 1000/10)
+            setTimeout(this.mainWheel, 1000/20)
         }
     };
 
@@ -76,7 +86,7 @@ export default class Engine {
                 ) model.onCollision(subModel)
             }
         }
-    }
+    };
 
     /**
      * Добавить модель
@@ -91,7 +101,21 @@ export default class Engine {
      */
     START = () => {
         this.setModel(new Hero());
+        this.createRocks();
         this.mainWheel()
+    };
+
+    /**
+     * Создать камни
+     */
+    createRocks = _ => {
+
+        for(let i = 300, j = 0; j <= 10; i += Math.floor(Math.random() * 200) + 90, j++)
+        {
+            this.setModel(new Rock(i))
+        }
+
+
     };
 
     /**

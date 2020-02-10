@@ -5,7 +5,14 @@ export default class UI {
         isStarted: null
     };
 
+
     static startGame = () => {
+        let name = document.querySelector('#nameInput').value;
+        if(name.length <= 0) {
+             return;
+        }
+
+        document.querySelector('#name').innerHTML += name;
         document.querySelector('#startMenu').style.display = 'none';
         document.querySelector('#video').style.display = 'block';
         this.state.isStarted = setTimeout("document.querySelector('#startMenu').style.display = 'none';\n" +

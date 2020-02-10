@@ -4,7 +4,7 @@ import Loader from "../vendor/Loader.js";
 export default class Hero extends Model{
 
     constructor() {
-        super(50, 60, 500, 700, 'HERO')
+        super(50, 60, 1400, 700, 'HERO')
     }
 
     /**
@@ -19,6 +19,8 @@ export default class Hero extends Model{
             switch (e.keyCode) {
                 case 39: this.goRight();break;
                 case 37: this.goLeft();break;
+                case 38: this.goUp();break;
+                case 40: this.goDown();break;
             }
         })
     };
@@ -35,6 +37,14 @@ export default class Hero extends Model{
             ENGINE.offset += 0;
         else
             this.lPos -= 3;
+    };
+
+    goUp = () => {
+
+    };
+
+    goDown = () => {
+
     };
 
     update = () => {
