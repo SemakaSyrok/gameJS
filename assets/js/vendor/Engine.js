@@ -55,8 +55,10 @@ export default class Engine {
             3000, window.innerHeight
         );
 
-        for (let model of this.models)
+        for (let model of this.models) {
             model.render();
+        }
+
     };
 
     /**
@@ -110,7 +112,7 @@ export default class Engine {
      */
     createRocks = _ => {
 
-        for(let i = 300, j = 0; j <= 10; i += Math.floor(Math.random() * 200) + 90, j++)
+        for(let i = 300, j = 0; j <= 10; i += Math.floor(Math.random() * 200) + 120, j++)
         {
             this.setModel(new Rock(i))
         }

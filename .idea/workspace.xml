@@ -2,14 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a86c6f44-64b8-4e2b-a0c3-f660e9ca96e4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/img/rock.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/models/Rock.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/js/models/Creature.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/models/Hero.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/models/Hero.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/models/Rock.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/models/Rock.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/vendor/Engine.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/vendor/Engine.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/vendor/Loader.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/vendor/Loader.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/vendor/UI.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/vendor/UI.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/Гусеницы/13895_0-450x450.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/gus/gus.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/Гусеницы/194900.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/gus/194900.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/Гусеницы/56745fe7c68a8151b696a185.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/gus/56745fe7c68a8151b696a185.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/Гусеницы/caterpillar003.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/gus/caterpillar003.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/Гусеницы/caterpillar_PNG19.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/gus/caterpillar_PNG19.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/Гусеницы/hill-576593__480.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/gus/hill-576593__480.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/Гусеницы/land-vector-1.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/gus/land-vector-1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/Гусеницы/wallpaper-wp3002726.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/wallpaper-wp3002726.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +54,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Program Files\OSPanel\domains\wsr-0\assets\img" />
       <recent name="C:\Program Files\OSPanel\domains\wsr-0\assets" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -64,7 +71,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1581221043092</updated>
-      <workItem from="1581221051570" duration="22711000" />
+      <workItem from="1581221051570" duration="26213000" />
     </task>
     <servers />
   </component>
@@ -76,5 +83,13 @@
       <screen x="62" y="0" width="1474" height="864" />
     </state>
     <state x="496" y="258" key="com.intellij.ide.util.TipDialog/62.0.1474.864@62.0.1474.864" timestamp="1581221055761" />
+    <state x="250" y="0" width="738" height="864" key="find.popup" timestamp="1581319641651">
+      <screen x="62" y="0" width="1474" height="864" />
+    </state>
+    <state x="250" y="0" width="738" height="864" key="find.popup/62.0.1474.864@62.0.1474.864" timestamp="1581319641651" />
+    <state x="462" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1581320931346">
+      <screen x="62" y="0" width="1474" height="864" />
+    </state>
+    <state x="462" y="181" width="672" height="678" key="search.everywhere.popup/62.0.1474.864@62.0.1474.864" timestamp="1581320931346" />
   </component>
 </project>

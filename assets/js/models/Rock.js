@@ -1,11 +1,12 @@
 import Model from "../vendor/Model.js";
 import Loader from "../vendor/Loader.js";
+import Creature from "./Creature.js";
 
 
 export default class Rock extends Model{
 
     constructor(lPos) {
-        super(60, 20, lPos, 600, 'ROCK');
+        super(80, 20, lPos, 600, 'ROCK');
     }
 
     onCollision = () => {
@@ -13,7 +14,9 @@ export default class Rock extends Model{
     };
 
     init = () => {
-        ENGINE.ctx.drawImage(Loader.images.rock, this.lPos, this.tPos, this.width, this.height);
+        if (Math.random() > 0.4) {
+            ENGINE.setModel(new Creature(this.lPos));
+        }
     };
 
 
@@ -24,8 +27,6 @@ export default class Rock extends Model{
     render = () => {
         ENGINE.ctx.drawImage(
             Loader.images.rock,
-            0,0,
-            20,80,
             this.lPos - ENGINE.offset, this.tPos,
             80, 20
         );
