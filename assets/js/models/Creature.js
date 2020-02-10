@@ -5,10 +5,10 @@ import Loader from "../vendor/Loader.js";
 export default class Creature extends Model{
 
     constructor(lPos) {
-        super(60, 20, lPos + Math.floor(Math.random()*30) , 620, 'Creature');
+        super(60, 45, lPos + Math.floor(Math.random()*30) , 568, 'CREATURE');
     }
 
-    onCollision = () => {
+    onCollision = model => {
 
     };
 
@@ -24,8 +24,8 @@ export default class Creature extends Model{
     render = () => {
         ENGINE.ctx.drawImage(
             Loader.images.gus,
-            this.lPos - ENGINE.offset, this.tPos- 50,
-            80, 20
+            this.lPos - ENGINE.offset, this.tPos,
+            this.width, this.height
         );
     }
 

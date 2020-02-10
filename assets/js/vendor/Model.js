@@ -7,6 +7,7 @@ export default class Model{
         this.lPos = lPos;
         this.tPos = tPos;
         this.tag = tag;
+        this.id = Date.now() + Math.random();
     }
 
     get rPos () { return this.lPos + this.width}

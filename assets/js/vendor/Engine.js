@@ -1,6 +1,7 @@
 import Loader from "./Loader.js";
 import Hero from "../models/Hero.js";
 import Rock from "../models/Rock.js";
+import Creature from "../models/Creature.js";
 
 export default class Engine {
 
@@ -24,8 +25,20 @@ export default class Engine {
         this.timer();
         this.collisionEventer();
         this.logic();
+        this.gusCreator();
         this.render();
         this.restart();
+
+    };
+
+    gusCreator = () => {
+        let guses = this.models.filter(m => m.tag === 'CREATURE');
+
+        if(guses.length < 2) {
+            let rocks = this.models.filter(m => m.tag === 'ROCK');
+            let rock = rocks[Math.floor(Math.random() * rocks.length)];
+            ENGINE.setModel(new Creature(rock.lPos - 10 + Math.floor(Math.random() * 20)));
+        }
 
     };
 
@@ -96,6 +109,14 @@ export default class Engine {
     setModel = (model) => {
         model.init();
         this.models.push(model)
+    };
+
+    /**
+     * Удалить модель
+     */
+    unSetModel = model => {
+
+        this.models = this.models.filter(m => m.id !== model.id);
     };
 
     /**

@@ -14,9 +14,7 @@ export default class Rock extends Model{
     };
 
     init = () => {
-        if (Math.random() > 0.4) {
-            ENGINE.setModel(new Creature(this.lPos));
-        }
+
     };
 
 
@@ -28,7 +26,7 @@ export default class Rock extends Model{
         ENGINE.ctx.drawImage(
             Loader.images.rock,
             this.lPos - ENGINE.offset, this.tPos,
-            80, 20
+            this.width, this.height
         );
     }
 
